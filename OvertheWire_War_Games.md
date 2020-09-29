@@ -14,7 +14,7 @@ boJ9jbbUNNfktd78OOpsqOltutMc3MY1
 
 **The password for the next level is stored in a file called - located in the home directory**
 ```
-CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9: cat ./-
+cat ./-:CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 ```
 --------------
 
@@ -24,7 +24,7 @@ CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9: cat ./-
 **The password for the next level is stored in a file called spaces in this filename located in the home directory**
 
 ```
-UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK: cat “spaces in this filename”
+cat “spaces in this filename”:UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 ```
 --------------
 
@@ -33,7 +33,7 @@ UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK: cat “spaces in this filename”
 **The password for the next level is stored in a hidden file in the inhere directory**
 
 ```
-pIwrPrtPN36QITSp3EQaw936yaFoFgAB: cat .hidden
+cat .hidden:pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 ```
 --------------
 
@@ -42,7 +42,7 @@ pIwrPrtPN36QITSp3EQaw936yaFoFgAB: cat .hidden
 **The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command.**
 
 ```
-koReBOKuIDDepwhWk7jZC0RTdopnAYKh:file inhere/* 
+file inhere/*:koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 ```
 --------------
 
@@ -55,7 +55,7 @@ koReBOKuIDDepwhWk7jZC0RTdopnAYKh:file inhere/*
  - not executable
 
 ```
-DXjZPULLxYr17uwoI01bNLQbtFemEgo7:find ./* -type f -size 1033c ! -executable
+find ./* -type f -size 1033c ! -executable:DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 ```
 --------------
 
@@ -68,7 +68,7 @@ DXjZPULLxYr17uwoI01bNLQbtFemEgo7:find ./* -type f -size 1033c ! -executable
  - 33 bytes in size
 
 ```
-HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs:find / -user bandit7 -group bandit6 -size 33c
+find / -user bandit7 -group bandit6 -size 33c:HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 ```
 --------------
 
@@ -77,7 +77,7 @@ HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs:find / -user bandit7 -group bandit6 -size 33c
 **The password for the next level is stored in the file data.txt next to the word millionth**
 
 ```
-cvX2JJa4CFALtqS87jk27qwqGhBM9plV:cat data.txt | grep -i millionth
+cat data.txt | grep -i millionth:cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 ```
 
 --------------
@@ -89,7 +89,6 @@ cvX2JJa4CFALtqS87jk27qwqGhBM9plV:cat data.txt | grep -i millionth
 ```
 sort data.txt | uniq -u:UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 ```
-
 --------------
 
 ## Lvl9 - Lvl10
