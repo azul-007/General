@@ -87,6 +87,7 @@ cvX2JJa4CFALtqS87jk27qwqGhBM9plV:cat data.txt | grep -i millionth
 **The password for the next level is stored in the file data.txt and is the only line of text that occurs only once**
 
 ```
+sort data.txt | uniq -u:UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 ```
 
 --------------
@@ -96,6 +97,116 @@ cvX2JJa4CFALtqS87jk27qwqGhBM9plV:cat data.txt | grep -i millionth
 ****
 
 ```
+
+```
+
+--------------
+
+## Lvl10 - Lvl11
+
+****
+
+```
+
+```
+
+--------------
+
+
+## Lvl11 - Lvl12
+
+****
+
+```
+
+```
+
+--------------
+
+
+## Lvl12 - Lvl13
+
+****
+
+```
+
+```
+
+--------------
+
+
+## Lvl13 - Lvl14
+
+****
+
+```
+
+```
+
+--------------
+
+
+## Lvl14 - Lvl15
+
+****
+
+```
+
+```
+
+--------------
+
+
+## Lvl15 - Lvl16
+
+****
+
+```
+
+```
+
+--------------
+
+
+## Lvl16 - Lvl17
+
+****
+
+```
+
+```
+
+--------------
+
+
+## Lvl17 - Lvl18
+
+****
+
+```
+
+```
+
+--------------
+
+
+## Lvl18 - Lvl19
+
+****
+
+```
+
+```
+
+--------------
+
+
+## Lvl19 - Lvl20
+
+****
+
+```
+
 ```
 
 --------------
