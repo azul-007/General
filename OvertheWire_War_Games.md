@@ -1,5 +1,6 @@
-OvertheWire War Games
-ssh bandit2@bandit.labs.overthewire.org -p 2220
+# OvertheWire War Games
+
+## ssh bandit2@bandit.labs.overthewire.org -p 2220
 
 ## Lvl0 - Lvl1
 
@@ -14,7 +15,7 @@ boJ9jbbUNNfktd78OOpsqOltutMc3MY1
 
 **The password for the next level is stored in a file called - located in the home directory**
 ```
-cat ./-:CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+cat ./- : CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 ```
 --------------
 
@@ -24,7 +25,7 @@ cat ./-:CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 **The password for the next level is stored in a file called spaces in this filename located in the home directory**
 
 ```
-cat “spaces in this filename”:UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+cat “spaces in this filename” : UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 ```
 --------------
 
@@ -33,7 +34,7 @@ cat “spaces in this filename”:UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 **The password for the next level is stored in a hidden file in the inhere directory**
 
 ```
-cat .hidden:pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+cat .hidden : pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 ```
 --------------
 
@@ -42,7 +43,7 @@ cat .hidden:pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 **The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command.**
 
 ```
-file inhere/*:koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+file inhere/* : koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 ```
 --------------
 
@@ -55,7 +56,7 @@ file inhere/*:koReBOKuIDDepwhWk7jZC0RTdopnAYKh
  - not executable
 
 ```
-find ./* -type f -size 1033c ! -executable:DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+find ./* -type f -size 1033c ! -executable : DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 ```
 --------------
 
@@ -68,7 +69,7 @@ find ./* -type f -size 1033c ! -executable:DXjZPULLxYr17uwoI01bNLQbtFemEgo7
  - 33 bytes in size
 
 ```
-find / -user bandit7 -group bandit6 -size 33c:HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+find / -user bandit7 -group bandit6 -size 33c : HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 ```
 --------------
 
@@ -77,7 +78,7 @@ find / -user bandit7 -group bandit6 -size 33c:HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 **The password for the next level is stored in the file data.txt next to the word millionth**
 
 ```
-cat data.txt | grep -i millionth:cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+cat data.txt | grep -i millionth : cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 ```
 
 --------------
@@ -87,7 +88,7 @@ cat data.txt | grep -i millionth:cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 **The password for the next level is stored in the file data.txt and is the only line of text that occurs only once**
 
 ```
-sort data.txt | uniq -u:UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+sort data.txt | uniq -u : UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 ```
 --------------
 
@@ -103,10 +104,10 @@ sort data.txt | uniq -u:UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 
 ## Lvl10 - Lvl11
 
-****
+**The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.**
 
 ```
-
+strings data.txt | grep "=" : truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
 ```
 
 --------------
