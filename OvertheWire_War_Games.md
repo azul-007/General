@@ -127,10 +127,13 @@ echo "Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh" | tr '[A-Za-z]' '[N-ZA-M
 
 ## Lvl12 - Lvl13
 
-****
+**The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the datafile using cp, and rename it using mv (read the manpages!)**
 
 ```
-
+cp data.txt /tmp/dan123/
+```
+```
+xxd -r dan.txt new_dan.txt
 ```
 
 --------------
