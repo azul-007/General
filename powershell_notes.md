@@ -68,3 +68,13 @@ You define a hashtable in which the keys are property names, and the values are 
  $myFirstCustomObject.OSBuild
  $myFirstCustomObject.OSVersion
 ```
+
+**Piping Objects Between Commands**
+```powershell
+Get-Service -Name 'wuauserv' | Start-Service
+```
+
+**Piping Arrays Between Commands**
+```powershell
+Get-Content -Path C:\Services.txt | Get-Service
+```
