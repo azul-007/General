@@ -78,3 +78,8 @@ Get-Service -Name 'wuauserv' | Start-Service
 ```powershell
 Get-Content -Path C:\Services.txt | Get-Service
 ```
+
+**Looking at Parameter Binding**
+```powershell
+
+```
