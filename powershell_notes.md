@@ -81,5 +81,22 @@ Get-Content -Path C:\Services.txt | Get-Service
 
 **Looking at Parameter Binding**
 ```powershell
+ PowerShell matches pipeline input to parameters in two ways. The first is via ByValue, which means that PowerShell
+ 
+ will look at the type of object passed in and interpret it accordingly. Because Get-Service specifies that it accepts
+ 
+ the Name parameter via ByValue, it will interpret any string passed to it as Name unless otherwise specified. Because
+ 
+ parameters passed via ByValue depend on the type of input, only one parameter can be passed via ByValue.
 
+The second way PowerShell will match a parameter from the pipeline is via ByPropertyName. In this case, PowerShell
+
+will look at the object passed in, and if it has a property with the appropriate name (ComputerName, in this case),
+
+then it will look at the value for that property and accept that value as the parameter. So if you wanted to pass in 
+
+both a service name and a computer name to Get-Service, you could create a PSCustomObject and pass it in
+
+$serviceObject = [PSCustomObject]@{Name = 'wuauserv'; ComputerName = 'SERV1'} 
+$serviceObject | Get-Service
 ```
