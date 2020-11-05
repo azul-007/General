@@ -32,7 +32,7 @@ $colorPicker.Remove('gray')
 ```powershell
 $users = @{
 abertram = 'Adam Bertram' raquelcer = 'Raquel Cerillo' zheng21 = 'Justin Zheng'
-
+}
 $users['abertram']
 
 $users.abertram
