@@ -256,3 +256,86 @@ while (Test-Connection -ComputerName $problemServer -Quiet -Count 1) {
 }
 ```
 ------------
+
+### Handling Nonterminating Errors
+**To turn this error into a terminating error, you’ll use the *$ErrorAction* parameter. This is a common parameter, meaning that it’s built into every PowerShell cmdlet. It has 5 main options: Continue, Ignore, Inquire, SilentlyContinue, Stop.**
+
+**To change how PowerShell handles all nonterminating errors, you can use the $ErrorActionPreference variable, an automatic variable that controls the default nonterminating error behavior. By default, $Error ActionPreference is set to Continue. Note that the ErrorAction parameter over- rides the value of *$ErrorActionPreference*.**
+
+------------
+
+### Handling Terminating Errors
+```powershell
+$folderPath = '.\bogusFolder'
+try {
+    $files = Get-ChildItem -Path $folderPath –ErrorAction Stop
+    $files.foreach({
+        $fileText = Get-Content $files
+        $fileText[0]
+    })
+} catch {
+    $_.Exception.Message
+}
+```
+------------
+
+### Error Variable
+**The $Error variable is a built-in variable that stores an array of all the errors returned in the current PowerShell session, ordered by the time they appear.**
+
+```powershell
+Get-Item -Path C:\NotFound.txt
+Get-Item -Path C:\NotFound2.txt
+$Error[0]
+$Error[1]
+```
+------------
+
+### Functions
+
+**Simple Parameter**
+```powershell
+ function Install-Software {
+    [CmdletBinding()]
+    param()
+    Write-Host 'I installed software version 2. Yippee!'
+}
+```
+
+
+**Mandatory Parameter Attribute**
+```powershell
+function Install-Software {
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory)]
+        [string]$Version
+    )
+    Write-Host "I installed software version $Version. Yippee!"
+}
+```
+
+**Default Parameter Values**
+```powershell
+function Install-Software {
+    [CmdletBinding()]
+    param(
+        [Parameter()]
+        [string]$Version = 2
+    )
+    Write-Host "I installed software version $Version. Yippee!"
+}
+```
+**Parameter Validation**
+```powershell
+  function Install-Software {
+                 param(
+                     [Parameter(Mandatory)]
+                     [ValidateSet('1','2')]
+                     [string]$Version
+)
+                 Get-ChildItem -Path \\SRV1\Installers\SoftwareV$Version
+             }
+      Install-Software -Version 3
+```
+
+------------
