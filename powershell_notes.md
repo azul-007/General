@@ -339,3 +339,63 @@ function Install-Software {
 ```
 
 ------------
+
+### Accepting Pipeline Input
+
+**Adding Another Parameter**
+```powershell
+ function Install-Software { param(
+[Parameter(Mandatory)] [string]$Version [ValidateSet('1','2')],
+[Parameter(Mandatory)]
+[string]$ComputerName )
+Write-Host "I installed software version $Version on $ComputerName. Yippee!" }
+
+$computers = @("SRV1", "SRV2", "SRV3")
+             foreach ($pc in $computers) {
+                 Install-Software -Version 2 -ComputerName $pc
+             }
+```
+
+**Making the Function Pipeline Compatible**
+
+**A PowerShell function uses two kinds of pipeline input: ByValue (entire object) and ByPropertyName (a single object property). Here, because our $computers list contains only strings, you’ll pass those strings via ByValue.**
+
+**To add pipeline support, you add a parameter attribute to the param- eter you want by using one of two keywords: ValueFromPipeline or ValueFrom PipelineByPropertyName.**
+
+```powershell
+
+function Install-Software { param(
+[Parameter(Mandatory)] [string]$Version [ValidateSet('1','2')],
+[Parameter(Mandatory, ValueFromPipeline)]
+[string]$ComputerName 
+)
+Write-Host "I installed software version $Version on $ComputerName. Yippee!" 
+}
+
+$computers = @("SRV1", "SRV2", "SRV3") 
+$computers | Install-Software -Version 2
+```
+
+**Adding a process Block**
+
+**To tell PowerShell to execute this function for every object coming in, you must include a process block. Inside the process block, you put the code you want to execute each time the function receives pipeline input.**
+```powershell
+
+function Install-Software {
+    param(
+        [Parameter(Mandatory)]
+        [string]$Version
+        [ValidateSet('1','2')],
+        [Parameter(Mandatory, ValueFromPipeline)]
+        [string]$ComputerName
+    )
+     Writing Functions 77
+process {
+        Write-Host "I installed software version $Version on $ComputerName. Yippee!"
+ } 
+}
+
+$computers = @("SRV1", "SRV2", "SRV3")
+$computers | Install-Software -Version 2
+```
+------------
