@@ -31,3 +31,28 @@ A document accessible through the web. Allows users to start "sessions" which al
 
 A great intro to the Jupyter Threat Hunting notebooks with a threat hunting use case http://threathunterplaybook.com/tutorials/jupyter/introduction/html
 
+
+# Assessing Detection Coverage
+
+## Sysmon Event Types pg. 85
+
+Endpoint Detection Superpowers on the cheap pg. 86
+https://medium.com/@olafhartong/endpoint-detection-superpowers-on-the-cheap-part-1-e9c28201ac47
+
+## Event Tracing for Windows (ETW) pg. 87
+- kernel-level tracing facility that lets you log kernel or application-defined events to a log file. Can consume the events in real time or from a log file and use them to debug an application or to determine where performance issues are occurring in the application
+
+ETW architecture is divided in three main components:
+- *Controller* allows us to start or stop tracing sessions. They also enable providers. Example: logmax.exe
+- *Providers* provide the events that are being traced. Ex: Microsoft-Windows-Security-Auditing
+- *Consumers* consume the events that are being traced. Ex: Event Viewer
+
+
+## Rule Based Detection
+- A better approach to detecting badness would be to create rules that detect techniques rather than the tool
+- Sysmon event ID 8 (CreateRemoteThread): look for target lsass.exe and assess who is attempting to interact with lsass.exe
+- Sysmon event ID 10 (ProcessAccess): look for target lsass.exe and asses who is attempting to interact with lsass.exe
+
+## Anomaly-Based Detection: Introducing EE-Outliers pg. 111
+- EE-Outliers is a frmework to detect outliers in events stored in an Elasticsearch cluster. The framework was developed for the purpose of detecting anomalies in security events.
+- Uses statistical models that are easily defined by the user in a config file. In case the models detect an outlier, the relevant Elasticsearch events are enriched with additional outlier fields. These fields can then be dashboarded and visualized using the tools of your choice.
