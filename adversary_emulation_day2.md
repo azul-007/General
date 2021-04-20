@@ -91,5 +91,34 @@ VBA code stored into Office documents is stored in several forms: source code (C
 - Using this binary it is possible to execute uncompiled source code on a system and as such effectively bypass applocker.
 - The compiler requires two input files: An XML file containing a serialized CompilerInput object and file path to which the utility can write its output.
 
+
+## Attack Surface Reduction Rules
+- Block all office applications from creating child processes pg. 67
+- Block office applications from creating executable content pg. 78
+- Block Win32 API calls from Office macros pg. 81
+
+
 ## Zooming in on Windows Internals
-### Operating System Rings
+### Operating System Rings pg. 88
+
+- Modern Windows systems make use of a protected mode, with applications running in *user mode (ring3)* unable to access critical memory sections, which run in *kernel mode (ring 0)*
+- When application wants to perform a priviledged system operation, with processor must switch to ring 0 and hand over the execution flow into kernel mode.
+- Rings 1 and 2 can be customized with levels of access but are generally unused unless there are virtual machines running.
+
+### Key Process Terminnology pg. 89
+- A *process* is what we call a program that has been loaded into memory along with all the resources it needs to operate.
+- A *thread* is the unit of execution within a process. A process can have anywhere from just one thread to many threads. All threads of a process share its virtual address space and system resources. In addtion, each thread maintains exception handlers, a scheduling priority, thread local storage, a unique thread identifier, and a set of structures the system will use to save the thread context until it is scheduled. The thread context includes the thread's set of machine registers, the kernel stack, a thread environment block and a user stack in the address space of the threads process.
+
+### Introducing the WIN32 API pg. 90
+
+### EDR & Windows API Hooking pg. 94
+
+### Identifying Hooks pg. 95
+
+### Process Injection Detection pg. 139
+- Focusing on a subtechnique allows you to determine the scope of your detection rules and will help prevent loss of focus and accuracy in terms of detection.
+- Windows API functions are often used for process injection techniques.
+
+### Sysmon vs Process Tampering pg. 143
+- Sysmon v13 includes event ID 25, generated when a process image is changed from an external source, such as a different process
+- It is still prone to false positives
