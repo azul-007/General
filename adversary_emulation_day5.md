@@ -28,3 +28,11 @@ a second password. This technique allows the actor to remain undetected by avoid
 - SprayingToolkit: a set of Python scripts that try password spraying attacks against Lync/S4B & OWA
 - MailSniper: PowerShell tool for password spraying, enumerating users/domains, gathering the Global Address List from OWA and EWS, and checking mailbox permisssions.
 
+## APT 34: Introduction and Common Techniques pg. 89
+
+Also known as Helix Kitten or Oilrig - they are an Iranian threat actor who's efforts are largely aligned with Iranian nation-state interests. Has been attributed to Iran by both FireEye and CrowdStrike. Typically do not perform cyberespionage against domestic targets, but primarily target organizations in other Middle Eastern countries
+
+Trademark Techniques:
+- T1059/001 PowerShell
+- T1087 Account Discovery
+- T1003 OS Credential Dumping
