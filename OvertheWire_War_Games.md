@@ -69,7 +69,7 @@ find ./* -type f -size 1033c ! -executable : DXjZPULLxYr17uwoI01bNLQbtFemEgo7
  - 33 bytes in size
 
 ```
-find / -user bandit7 -group bandit6 -size 33c : HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+find / -type f -user bandit7 -group bandit6 -size 33c 2> /dev/null: HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 ```
 --------------
 
